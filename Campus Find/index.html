@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPUS FIELD | Lost & Found</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7ff;
+            color: #172554;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: white;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #2457e6;
+        }
+
+        .logo span {
+            color: #172554;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            margin-left: 25px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2457e6;
+        }
+
+        .nav-btn {
+            background: #2457e6;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+
+        /* Homepage Hero */
+        .hero {
+            min-height: 570px;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #e9efff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 570px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #dbe7ff;
+            color: #2457e6;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: #2457e6;
+        }
+
+        .hero-content p {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .primary {
+            background: #2457e6;
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+            color: #2457e6;
+            border: 1px solid #cbd8ff;
+        }
+
+        /* Illustration */
+        .hero-image {
+            width: 400px;
+            min-width: 300px;
+            height: 350px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px #17255415;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .illustration {
+            font-size: 100px;
+        }
+
+        .hero-image h3 {
+            font-size: 23px;
+        }
+
+        .hero-image p {
+            color: #64748b;
+            text-align: center;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section-text {
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px #17255408;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .feature-icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Call to Action */
+        .cta {
+            margin: 20px 8% 65px;
+            padding: 50px 25px;
+            background: #2457e6;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #e0e7ff;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: white;
+            color: #2457e6;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            padding: 25px 8%;
+            text-align: center;
+            background: #172554;
+            color: white;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 65px 6%;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 400px;
+                min-width: 0;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">CAMPUS <span>FIELD</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#features" class="nav-btn">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Homepage -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <div class="tag">YOUR CAMPUS, YOUR COMMUNITY</div>
+
+            <h1>Lost Something?<br>
+                <span>Find It Here.</span>
+            </h1>
+
+            <p>
+                Welcome to CAMPUS FIELD, your campus lost and found
+                portal. Report lost belongings, find missing items,
+                and help fellow students reconnect with what matters.
+            </p>
+
+            <a href="#features" class="btn primary">Explore Portal →</a>
+            <a href="#contact" class="btn secondary">Learn More</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="illustration">🎒 🔍</div>
+            <h3>Lost Today, Found Tomorrow!</h3>
+            <p>
+                Bringing students together to make lost and found
+                simple, quick, and hassle-free.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <h2>How CAMPUS FIELD Helps</h2>
+
+        <p class="section-text">
+            A smarter and easier way to manage lost and found items
+            across your campus.
+        </p>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div class="feature-icon">📢</div>
+                <h3>Report Lost Items</h3>
+                <p>
+                    Lost your ID card, books, wallet, or keys?
+                    Report missing belongings and let the campus
+                    community help you find them.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔎</div>
+                <h3>Find Your Belongings</h3>
+                <p>
+                    Explore lost and found reports to identify
+                    your missing belongings and reconnect with
+                    your valuable items.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Help Other Students</h3>
+                <p>
+                    Found something on campus? Help return
+                    lost belongings to their rightful owners
+                    and build a caring campus community.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" id="contact">
+        <h2>Let's Find What's Lost!</h2>
+
+        <p>
+            Every lost item has a story. Be part of the solution
+            and make your campus a better place.
+        </p>
+
+        <a href="mailto:campusfield@example.com">
+            Contact Us →
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>CAMPUS FIELD</strong></p>
+        <p>Lost & Found Portal | Connecting Students, Finding Belongings</p>
+        <p>© 2026 CAMPUS FIELD. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
